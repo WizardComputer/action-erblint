@@ -20,6 +20,9 @@ inputs:
       Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
       Default is added.
     default: 'added'
+  use_bundler:
+    description: "Run erb_lint with bundle exec. Default: `false`"
+    default: 'false'
 runs:
   using: 'composite'
   steps:
