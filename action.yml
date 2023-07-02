@@ -1,0 +1,38 @@
+name: 'Run erb-lint with reviewdog'
+description: '🐶 Run erb-lint with reviewdog on pull requests to improve code review experience.'
+author: 'WizardHealth'
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN'
+    default: ${{ github.token }}
+  erblint_version:
+    description: 'erb-lint version'
+  level:
+    description: 'Report level for reviewdog [info,warning,error]'
+    default: 'error'
+  reporter:
+    description: |
+      Reporter of reviewdog command [github-pr-check,github-check,github-pr-review].
+      Default is github-pr-review.
+    default: 'github-pr-review'
+  filter_mode:
+    description: |
+      Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
+      Default is added.
+    default: 'added'
+runs:
+  using: 'composite'
+  steps:
+    - run: $GITHUB_ACTION_PATH/script.sh
+      shell: sh
+      env:
+        REVIEWDOG_VERSION: v0.14.2
+        INPUT_GITHUB_TOKEN: ${{ inputs.github_token }}
+        INPUT_ERBLINT_VERSION: ${{ inputs.erblint_version }}
+        INPUT_LEVEL: ${{ inputs.level }}
+        INPUT_REPORTER: ${{ inputs.reporter }}
+        INPUT_FILTER_MODE: ${{ inputs.filter_mode }}
+        INPUT_WORKDIR: ${{ inputs.workdir }}
+branding:
+  icon: check-circle
+  color: red
