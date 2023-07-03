@@ -44,7 +44,7 @@ With `reporter: github-pr-check` an annotation is added to the line:
 
 `GITHUB_TOKEN`. Default is `${{ github.token }}`.
 
-### `erbversion_version`
+### `erblint_version`
 
 Optional. Set erb_lint version. 
 * empty or omit: install latest version
