@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: test/using_gemfile
+        working-directory: test/gemfile
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/test/gemfile/Gemfile
     steps:
@@ -21,4 +21,4 @@ jobs:
           github_token: ${{ secrets.github_token }}
           brakeman_version: 'gemfile'
       - run: |
-          test "$(bundle exec erb_lint --version)" == "erb_lint 0.4.0"
+          test "$(bundle exec erblint --version)" == "0.4.0"
