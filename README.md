@@ -19,7 +19,7 @@ jobs:
         with:
           ruby-version: 3.2.2
       - name: erb_lint
-        uses: WizardComputer/action-erblint@v1
+        uses: WizardComputer/action-erblint@v1.0.0
         with:
           reporter: github-pr-check # Default is github-pr-review
 ```
