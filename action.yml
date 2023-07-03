@@ -1,4 +1,4 @@
-name: 'Run erb-lint with reviewdog'
+name: 'erb_lint with reviewdog'
 description: '🐶 Run erb-lint with reviewdog on pull requests to improve code review experience.'
 author: 'WizardHealth'
 inputs:
